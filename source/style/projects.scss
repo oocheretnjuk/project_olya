@@ -1,0 +1,354 @@
+.myWorksContainer{
+  background-color: #0d1120;
+  position: relative;
+  & .threeangle polygon{
+    fill: #0d1120;
+  }
+}
+.titleContainer{
+  opacity: .85;
+  .title{
+    padding: $smallIndent 0;
+    text-align: center;
+    color: #fff;
+    @media screen and (min-width: 768px) {
+      padding: 2.65rem 0;
+    }
+    @media screen and (min-width: 1200px) {
+      padding: 4.15rem 0;
+    }
+    &__slider{
+      background: url(../img/photoshop/stars2.png) no-repeat center;
+      background-size: contain;
+    }
+    &__about{
+      background: url(../img/photoshop/stars3.png) no-repeat center;
+      background-size: contain;
+    }
+  }
+}
+.slider{
+  height: 100vh;
+  min-height: 568px;
+  position: relative;
+  &__list{
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__item{
+    position: absolute;
+    padding: $smallIndent/2;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    @media screen and (min-width: 1024px) {
+      &{
+        padding: $smallIndent;
+      }
+    }
+    &_container{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &_current, &_description{
+      opacity: 0;
+      z-index: 0;
+    }
+    &_down{
+      top:-100%;
+    }
+    &_up{
+      top:100%;
+    }
+    &.active{
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 1;
+      transition-duration: 700ms;
+    }
+    &_down.wasActive{
+      top:100%;
+      transition-duration: 700ms;
+    }
+    &_up.wasActive{
+      top:-100%;
+      transition-duration: 700ms;
+    }
+
+  }
+  &__current{
+    height: 45%;
+    background-color: #e3e2de;
+    @media screen and (min-width: 1024px) {
+      &{
+        position: absolute;
+        right: 0;
+        height: 70%;
+        width: 50%;
+        top: 0;
+      }
+    }
+  }
+  &__description{
+    height: 39%;
+    background-color: #f2f0e8;
+    @media screen and (min-width: 1024px) {
+      &{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        top: 0;
+      }
+    }
+    &_name{
+      color: #474b57;
+      text-transform: uppercase;
+      font-family: web_regular;
+    }
+    &_technologies{
+      text-transform: uppercase;
+      color: #243994;
+      font-family: r_medium;
+    }
+    &_link{
+      text-decoration: none;
+      color: #fff;
+      background-color: $blue;
+      margin: $smallIndent auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:focus{
+        background-color: #1E60CF;
+      }
+      &:hover{
+        background-color: $blueHover;
+      }
+      &:active{
+        background-color: #0235a2;
+      }
+      & svg{
+        margin: 0.75em;
+        margin-left: 0;
+      }
+    }
+
+  }
+  &__siblings{
+    height: 16%;
+    @media screen and (min-width: 1024px) {
+      &{
+        position: absolute;
+        right: 0;
+        height: 30%;
+        width: 50%;
+        bottom: 0;
+      }
+    }
+  }
+  &__img{
+    height: 100%;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+    &_up, &_down{
+      height: 100%;
+      position: relative;
+      background: linear-gradient(to right, #b9b9b9 0%,#f8f8f8 20%,#f8f8f8 80%,#b5b5b5 100%);
+      & svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+      }
+    }
+    &_up:after, &_down:after{
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+      left: 0;
+      background: rgba(#aaabb7, .7);
+      content: "";
+    }
+    &_up:hover svg{
+      transform: translate(-50%,-100%);
+    }
+    &_down:hover svg{
+      transform: translate(-50%,0);
+    }
+  }
+  &__image{
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+.aboutTalkes{
+  background: url(../img/photoshop/mayak.png) no-repeat calc(50% + 30rem) 23rem, url(../img/photoshop/mayak_bg.jpg) no-repeat center;
+  background-size: auto, cover;
+  padding-bottom: 353px;
+  margin-bottom: -353px;
+}
+@media screen and (min-width: 400px) {
+  .aboutTalkes{
+    padding-bottom: 329px;
+    margin-bottom: -329px;
+  }
+}
+@media screen and (min-width: 525px) {
+  .aboutTalkes{
+    padding-bottom: 310px;
+    margin-bottom: -310px;
+  }
+}
+@media screen and (min-width: 668px) {
+  .aboutTalkes{
+    padding-bottom: 234px;
+    margin-bottom: -234px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .aboutTalkes{
+    padding-bottom: 200px;
+    margin-bottom: -200px;
+  }
+}
+
+.talkes{
+  margin: 0 auto;
+  padding: $smallIndent/2;
+  @media screen and (min-width: 1024px) {
+    &{
+      display: flex;
+      justify-content: center; 
+    }
+  }
+  &__talk{
+    font-family: r_reg_italic;
+    color: #fff;
+    max-width: 25rem;
+    margin: 0 auto;
+    background: url(../img/photoshop/quote.png) no-repeat left 3rem ;
+    margin-bottom: $smallIndent*1.5;
+    @media screen and (min-width: 1024px) {
+      &{
+        width: 50%;
+        float: left;
+        margin: 0; 
+        margin-bottom: $smallIndent*1.5;
+      }
+    }
+    &_image{
+      width: 3.714rem;
+      height: 3.714rem;
+      border-radius: 50%;
+      margin: 0 auto;
+      &_koval{
+        background: url(../img/photoshop/AboutKov.jpg) no-repeat 0 -10px;
+        background-size: cover;
+      }
+      &_zar{
+        background: url(../img/photoshop/AboutZar.jpg) no-repeat center;
+        background-size: contain;
+      }
+    }
+    &_words{
+      text-align: left;
+      padding: $smallIndent/2 0;
+
+    }
+    &_author{
+      text-align: center;
+      & span{
+        display: block;
+        font-family: r_bold_italic;
+      }
+    }
+  }
+}
+.callback{
+  &__form{
+    margin: 0 auto;
+    max-width: 25rem;
+    padding: 0 $smallIndent/2;
+    &_container{
+      padding: $smallIndent;
+    }
+    &_container, &_buttons{
+    background-color: rgba(#fff, .05);
+    }
+    &_title{
+      color: #fff;
+      font-family: web_regular;
+      text-transform: uppercase;
+      text-align: center;
+      margin: $smallIndent/2 0;
+    }
+    &_hr{
+      margin-bottom: $smallIndent;
+      background-color: #fff;
+    }
+    &_input{
+      width: 100%;
+      border: none;
+      background-color: rgba(#fff, .07);
+      padding: 0.6825rem 1rem;
+      outline: none;
+      color: #fff;
+      &::placeholder{
+        color: #fff;
+        opacity: .5;
+      }
+      &:focus::placeholder{
+        opacity: 0.75;
+      }
+    }
+    &_login, &_email{
+      margin-bottom: $smallIndent;
+    }
+    &_textArea{
+      height: 10rem;
+      resize: none;
+    }
+    &_button{
+      background-color: rgba($blue,0.85);
+      border: none;
+      font: 1rem/2.8125 r_regular;
+      color: #fff;
+      opacity: .5;
+      outline: none;
+      cursor: pointer;
+      &:focus{
+        background-color: #1E60CF;
+      }
+      &:hover{
+        background-color: $blueHover;
+      }
+      &:active{
+        background-color: #0235a2;
+      }
+      &:hover,&:focus,&:active{
+        opacity: 1;
+      }
+    }
+  }
+}
+.toTop{
+  margin: 2.5rem 0;
+  &__button{
+    display: block;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: none;
+    transform: rotateX(180deg);
+  }
+}

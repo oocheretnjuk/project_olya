@@ -1,0 +1,53 @@
+&_image{
+  background: #f0efe9;
+  width: $indexTextInputsSize;
+  height: $indexTextInputsSize;
+  position: absolute;
+  border: 1px solid transparent;
+  top:0;
+  left: 0;
+  & svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+&_textInput{
+  width: 100%;
+  height: $indexTextInputsSize;
+  padding: $smallIndent/2 $smallIndent;
+  padding-left: $indexTextInputsSize + $smallIndent;
+  border: 1px solid transparent;
+  color: $indexInputsTextColor;
+  outline: none;
+  &::placeholder{
+    color: rgba($indexInputsTextColor, .5);
+  }
+  &:hover{
+    border-color: $indexInputsTextColor;
+  }
+  &:focus{
+    border-color: $blue;
+  }
+  &.has-error{
+    border-color: $tooltipColor;
+  };
+}
+&_textInput:hover + &_image{
+  border-right-color: rgba($indexInputsTextColor, .75);
+}
+&_textInput:focus + &_image{
+  border-right-color: $blue;
+  & path{
+    fill: $blue;
+  }
+}
+&_textInput.has-error + &_image{
+  border-right-color: $tooltipColor;
+  & path{
+    fill: $tooltipColor;
+  }
+}

@@ -1,0 +1,20 @@
+header.header
+  .paralax
+    video.paralax__video(autoplay muted loop)
+      source(src="assets/img/video/night.mp4" type="video/mp4")
+    img.paralax__image(src="assets/img/mountains.png" alt="mountains")
+  .header__buttons.row
+    .header__socials.header__icons
+      include _socials
+    .header__menuButton
+      button.header__menuButton_openMenu.header__icons(type='button')
+        include ../../icons/hamburger.svg
+  .header__photo
+    .header__photo_image
+      img.header__photo_pic(src="assets/img/fav_night.png" alt="photo")
+    h5.header_name Крошко Микола
+    .header_description Особистий сайт веб розробника
+  .header__down
+    button.header__down_button
+      include ../../icons/arrow_down.svg
+  include _humMenu

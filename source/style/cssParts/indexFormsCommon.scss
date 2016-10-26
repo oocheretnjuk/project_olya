@@ -1,0 +1,96 @@
+.mainContainer{
+  perspective: 1000px;
+  margin: 0 auto;
+  min-height: 405px;
+  width: 100%;
+  max-width: 300px;
+  &__wideWrapper{
+    display: flex;
+    align-items: center;
+    transition-duration: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  &.hover &__wideWrapper {
+    transform: rotateY(180deg);
+  }
+  &__block{
+    width: 100%;
+    color: #fff;
+    margin: 0 auto;
+    &_info{
+      padding: 2.75rem 0 2.25rem;
+      background-color: rgba(#1c1f29,0.5);
+      text-align: center;
+      @import "indexAboutBlock";
+      @import "indexFormBlock";
+    }
+    @media screen and (min-width: 768px) {
+      &_info{
+        padding: 2.5rem 0 2rem;
+      }
+    }
+
+    &_links{
+      display: flex;
+      justify-content: space-between;
+      background-color: rgba(#1c1f29,0.5);
+      &_link{
+        color:#fff;
+        flex-grow: 1;
+        text-align: center;
+        font-family:  r_medium;
+        line-height: $indexButtomsHeight;
+        text-decoration: none;
+        background-color: rgba($blue,0.85);
+        outline: none;
+        cursor: pointer;
+        height: $indexButtomsHeight;
+        border: none;
+        &:not(:last-child){
+          border-right: 1px solid rgba(#dee3e7,0.5);
+        }
+        &:focus{
+          background-color: #1E60CF;
+        }
+        &:hover{
+          background-color: $blueHover;
+        }
+        &:active{
+          background-color: #0235a2;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 480px) {
+  .mainContainer{
+    max-width: 330px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mainContainer{
+    width: 50%;
+    max-width: 350px;
+
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainContainer{
+    width: 33%;
+    max-width: 380px;
+  }
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.front {
+  transform: rotateY(0deg);
+}
+.back {
+  transform: rotateY(180deg);
+}
