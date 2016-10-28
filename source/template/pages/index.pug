@@ -6,7 +6,7 @@ include ../common/_head
       source(src="assets/img/video/night.mp4" type="video/mp4")
     img.paralax__image(src="assets/img/mountains.png" alt="mountains")
   .autorization
-    button.autorization__button(type="button") Авторизуватися
+    button.autorization__button(type="button") Авторизироватся
   .mainContainer
     .mainContainer__wideWrapper.row
       .mainContainer__block.front
@@ -14,17 +14,17 @@ include ../common/_head
           .mainContainer__block_info_imageHolder
             img.mainContainer__block_info_imageHolder_image(src="assets/img/fav_night.png",alt="Author's photo")
           .mainContainer__block_info_text
-            h5.mainContainer__block_info_name Крошко Микола
-            p.mainContainer__block_info_aboutSite Особистий сайт веб розробника
+            h5.mainContainer__block_info_name Очеретнюк Ольга
+            p.mainContainer__block_info_aboutSite Личный сайт веб разработчика
           .mainContainer__block_info_socials
             include ../common/_socials
         nav.mainContainer__block_links
-          a.mainContainer__block_links_link(href="/projects.html") Мої роботи
-          a.mainContainer__block_links_link(href="/about.html") Про мене
+          a.mainContainer__block_links_link(href="/projects.html") Мои роботы
+          a.mainContainer__block_links_link(href="/about.html") Обо мне
           a.mainContainer__block_links_link(href="/blog.html") Блог
       .mainContainer__block.back.form_contains
         .mainContainer__block_info
-          h4.mainContainer__block_info_formTitle Авторизуйтеся
+          h4.mainContainer__block_info_formTitle Авторизуйтесь
           form.mainContainer__block_info_form#autorization(action="/autorization")
             .mainContainer__block_info_form_formItem
               label.mainContainer__block_info_form_loginLabel
@@ -46,14 +46,14 @@ include ../common/_head
               label.mainContainer__block_info_form_radioLabel
                 input.mainContainer__block_info_form_radio(type="radio" name="robot" value="yes")
                 span.mainContainer__block_info_form_radioIcon
-                span.mainContainer__block_info_form_text Так
+                span.mainContainer__block_info_form_text Да
               label.mainContainer__block_info_form_radioLabel
                 input.mainContainer__block_info_form_radio(type="radio" name="robot" value="no")
                 span.mainContainer__block_info_form_radioIcon
-                span.mainContainer__block_info_form_text Не впевнений
+                span.mainContainer__block_info_form_text Не уверенный
         nav.mainContainer__block_links
-          button.mainContainer__block_links_link.mainContainer__block_links_home.col-6(type="button") На головну
-          button.mainContainer__block_links_link.submitForm.col-6(type="button") Увійти
+          button.mainContainer__block_links_link.mainContainer__block_links_home.col-6(type="button") На главную
+          button.mainContainer__block_links_link.submitForm.col-6(type="button") Ввойти
   .index__copyright
     include ../common/_copyright
   .indexPopUp
